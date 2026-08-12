@@ -245,7 +245,7 @@ function setupWhatsApp() {
     if(waLink) {
         waLink.addEventListener('click', (e) => {
             e.preventDefault();
-            const phoneNumber = "919999999999"; 
+            const phoneNumber = "7078423155"; 
             const message = encodeURIComponent("Hi Fix A Ghar team! I need some help with home services.");
             window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
         });
