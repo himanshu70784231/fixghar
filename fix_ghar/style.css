@@ -1,0 +1,33 @@
+/* Custom Styles */
+html { 
+    scroll-behavior: smooth; 
+}
+
+/* Service Card Hover Effect */
+.tilt-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tilt-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Three.js Canvas positioning */
+#three-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Floating WhatsApp Button Animation */
+@keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.floating-whatsapp {
+    animation: bounce-subtle 3s infinite ease-in-out;
+}

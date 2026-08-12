@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix A Ghar - Trusted Home Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0F2C59',
+                            dark: '#0A1D37',
+                            light: '#EBF3FE',
+                            accent: '#2563EB',
+                            green: '#0F763E'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- PROMOTIONAL TOP BAR -->
+
+    <div class="bg-brand-accent text-white text-xs sm:text-sm font-medium py-2 px-4 text-center relative z-50">
+        🎉 First time user? Get a flat 20% off on your first service with code: <span class="font-bold border-b border-dashed ml-1">FIXGHAR20</span>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-md border border-gray-100 flex items-center justify-center bg-white">
+             <img src="logo.png" alt="Fix A Ghar" class="w-full h-full object-cover scale-[1.7] object-center">
+             </div>
+            
+                <div>
+                    <span class="text-xl font-black tracking-tight text-gray-900">FIX  <span class="text-blue-600">GHAR</span></span>
+                    <p class="text-[9px] tracking-widest uppercase font-bold text-gray-400">Trusted Experts</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-gray-600 text-sm">
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#how-it-works" class="hover:text-blue-600 transition">How It Works</a>
+                <a href="#testimonials" class="hover:text-blue-600 transition">Reviews</a>
+                <a href="#faq" class="hover:text-blue-600 transition">FAQs</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button onclick="openModal()" class="bg-brand-green text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-green-700 transition shadow-md" aria-label="Book a Service">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-blue-50/80 to-gray-50 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="inline-flex items-center space-x-2 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
+                        <i class="fa-solid fa-medal"></i> <span>Top Rated Home Services</span>
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
+                        Book Trusted Experts <br><span class="text-blue-600">For Your Home</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                        Experience hassle-free plumbing, electrical maintenance, cleaning, AC repair, and more with our verified professionals.
+                    </p>
+                    
+                    <div class="bg-white p-2 rounded-2xl shadow-lg border border-gray-100 flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 max-w-xl">
+                        <div class="flex items-center space-x-2 px-3 py-2 w-full sm:w-auto border-b sm:border-b-0 sm:border-r border-gray-100 text-sm text-gray-500">
+                            <i class="fa-solid fa-location-dot text-blue-600"></i>
+                            <span>Kanpur</span>
+                        </div>
+                        <div class="relative flex-grow w-full">
+                            <input type="text" id="serviceSearch" onkeypress="if(event.key === 'Enter') handleSearch()" placeholder="Search for AC repair, plumbing..." class="w-full py-2.5 pl-4 pr-4 text-sm focus:outline-none rounded-xl">
+                        </div>
+                        <button onclick="handleSearch()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition">
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- NEW PROFESSIONAL HERO IMAGE SECTION -->
+                <div class="lg:col-span-5 relative w-full h-[350px] sm:h-[420px] mt-8 lg:mt-0">
+                    <!-- Main Image container -->
+                    <div class="w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative group bg-gray-200">
+                        <!-- Using a professional home service image -->
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1000&auto=format&fit=crop" alt="Professional Handyman Services" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent"></div>
+                        
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-bold mb-1">Expert Professionals</h3>
+                            <p class="text-gray-300 text-sm">Background verified & well-trained staff</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 1: Customer Rating -->
+                    <div class="absolute -left-2 sm:-left-8 top-12 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-3 animate-[bounce_3s_infinite]">
+                        <div class="bg-yellow-100 p-2 rounded-full text-yellow-500 flex items-center justify-center w-10 h-10">
+                            <i class="fa-solid fa-star text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Customer Rating</p>
+                            <p class="text-base font-black text-gray-900">4.9/5.0</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2: Verified Experts -->
+                    <div class="absolute -right-2 sm:-right-6 top-1/2 -translate-y-1/2 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-3 animate-[bounce_4s_infinite]" style="animation-delay: 1s;">
+                        <div class="bg-blue-100 p-2 rounded-full text-blue-600 flex items-center justify-center w-10 h-10">
+                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Verified Experts</p>
+                            <p class="text-base font-black text-gray-900">500+</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END NEW SECTION -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID SECTION -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Our Services</span>
+                <h2 class="text-3xl font-black text-gray-900 mt-3">Professional Solutions for Every Need</h2>
+                <p class="text-gray-600 mt-2">Tap any card to learn more and book an expert.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div onclick="openModalAndSelect('plumbing')" class="tilt-card bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Plumbing</h3>
+                    <p class="text-sm text-gray-600">Advanced pipe repairs, leak blockages, and valve setups handled safely.</p>
+                </div>
+
+                <div onclick="openModalAndSelect('electrical')" class="tilt-card bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-amber-50 text-amber-500 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Electrical</h3>
+                    <p class="text-sm text-gray-600">Switchboard fittings, wiring fixes, and fixture installations securely.</p>
+                </div>
+
+                <div onclick="openModalAndSelect('cleaning')" class="tilt-card bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-bucket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Cleaning</h3>
+                    <p class="text-sm text-gray-600">Comprehensive sanitization, floor polishing, and deep cleaning protocols.</p>
+                </div>
+
+                <div onclick="openModalAndSelect('ac-repair')" class="tilt-card bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">AC Repair</h3>
+                    <p class="text-sm text-gray-600">Gas refilling, general servicing, and complete breakdown maintenance.</p>
+                </div>
+
+                <div onclick="openModalAndSelect('painting')" class="tilt-card bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-paint-roller"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Painting</h3>
+                    <p class="text-sm text-gray-600">Interior and exterior painting, waterproofing, and texture designs.</p>
+                </div>
+
+                <div onclick="openModalAndSelect('carpentry')" class="tilt-card bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Carpentry</h3>
+                    <p class="text-sm text-gray-600">Custom furniture making, door repairs, and general woodwork fixtures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="py-16 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-100 px-3 py-1 rounded-full">Simple Process</span>
+                <h2 class="text-3xl font-black text-gray-900 mt-3">How Fix A Ghar Works</h2>
+                <p class="text-gray-600 mt-2">Get your home issues resolved in four easy steps.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <div class="text-center relative z-10">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl font-black shadow-lg border-4 border-blue-50 mb-4">1</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Select Service</h3>
+                    <p class="text-sm text-gray-600">Choose from our wide range of professional home services.</p>
+                </div>
+                <div class="text-center relative z-10">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl font-black shadow-lg border-4 border-blue-50 mb-4">2</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Schedule Time</h3>
+                    <p class="text-sm text-gray-600">Pick a date and time that fits perfectly into your schedule.</p>
+                </div>
+                <div class="text-center relative z-10">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-blue-600 text-3xl font-black shadow-lg border-4 border-blue-50 mb-4">3</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Expert Arrives</h3>
+                    <p class="text-sm text-gray-600">Our background-checked professional arrives at your doorstep.</p>
+                </div>
+                <div class="text-center relative z-10">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center text-brand-green text-3xl font-black shadow-lg border-4 border-green-50 mb-4"><i class="fa-solid fa-check"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Problem Solved</h3>
+                    <p class="text-sm text-gray-600">Pay securely online only after the job is completed to your satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NEW FEATURE: COST ESTIMATOR SECTION -->
+    <section id="estimator" class="py-16 bg-brand-light border-y border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-blue-100 relative overflow-hidden">
+                <!-- Decorative background -->
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-blue-100 opacity-50 blur-2xl pointer-events-none"></div>
+                
+                <div class="text-center mb-8 relative z-10">
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full"><i class="fa-solid fa-calculator mr-1"></i> Cost Calculator</span>
+                    <h2 class="text-3xl font-black text-gray-900 mt-3">Quick Price Estimator</h2>
+                    <p class="text-gray-600 mt-2">Get an instant estimated cost for your required service before booking.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10 items-center">
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">1. Select Service</label>
+                            <select id="calc-service" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition cursor-pointer">
+                                <option value="" disabled selected>Choose a category...</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="ac-repair">AC Repair</option>
+                                <option value="cleaning">Deep Cleaning</option>
+                                <option value="electrical">Electrical</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">2. Select Specific Task</label>
+                            <select id="calc-task" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition disabled:opacity-50 cursor-pointer" disabled>
+                                <option value="" disabled selected>First select a service above...</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-2xl p-8 text-white text-center shadow-inner relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-blue-600/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                        <div class="relative z-10">
+                            <p class="text-sm text-gray-400 font-medium mb-2">Estimated Total Cost</p>
+                            <h3 id="calc-result" class="text-4xl sm:text-5xl font-black text-blue-400 transition-opacity duration-300">₹0</h3>
+                            <p class="text-xs text-gray-500 mt-4 border-t border-gray-700 pt-3">*Final price depends on physical inspection by our expert.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Testimonials</span>
+                <h2 class="text-3xl font-black text-gray-900 mt-3">Loved by Homeowners</h2>
+                <p class="text-gray-600 mt-2">See what our customers have to say about our services.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"The plumber arrived exactly on time and fixed my leaking sink in under 30 minutes. The transparent pricing is what I loved the most!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold">A</div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-900">Anjali S.</p>
+                            <p class="text-xs text-gray-500">Noida</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"Used their AC repair service last weekend. The technician was polite, explained the issue clearly, and didn't leave any mess behind. Highly recommended."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold">R</div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-900">Rahul V.</p>
+                            <p class="text-xs text-gray-500">Gurugram</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div class="flex text-yellow-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">"Getting my entire apartment deep cleaned was a breeze. They sent a team of 3 who were meticulous and completely transformed my home."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold">P</div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-900">Priya M.</p>
+                            <p class="text-xs text-gray-500">South Delhi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-gray-900">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl border border-gray-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold">
+                        What if I am not satisfied with the service?
+                        <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-blue-600"></i>
+                        </span>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        Customer satisfaction is our top priority. If you are not happy with our service, let us know within 24 hours, and we will arrange a free rework or investigate the issue immediately.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold">
+                        Do I have to pay before the service?
+                        <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-blue-600"></i>
+                        </span>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        No, you only pay once the job is completely done to your satisfaction. You will receive an invoice and can pay securely online or via UPI.
+                    </p>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-bold">
+                        Are your professionals verified?
+                        <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-blue-600"></i>
+                        </span>
+                    </summary>
+                    <p class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
+                        Yes, every expert on Fix A Ghar goes through a strict 3-step verification process, including a criminal background check, skill testing, and behavioral screening.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-house-chimney-medical text-blue-500"></i>
+                <span class="font-bold tracking-wider">FIX A GHAR</span>
+            </div>
+            <div class="text-xs text-gray-400">
+                <p>&copy; 2026 Fix A Ghar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/919999999999" target="_blank" class="floating-whatsapp fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-30" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 relative shadow-2xl transform transition-all">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="mb-6 text-center">
+                <h3 class="text-2xl font-black text-gray-900 mb-2">Book an Expert</h3>
+                <p class="text-sm text-gray-500">Fill out the details below and we'll connect you with a verified professional.</p>
+            </div>
+
+            <form id="bookingForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">Select Service</label>
+                    <select id="serviceDropdown" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition appearance-none">
+                        <option value="" disabled selected>Choose a category...</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="ac-repair">AC Repair</option>
+                        <option value="painting">Painting</option>
+                        <option value="carpentry">Carpentry</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">Full Name</label>
+                    <input type="text" placeholder="e.g. Rahul Sharma" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">Phone Number</label>
+                    <input type="tel" id="phoneInput" placeholder="+91 99999 00000" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition">
+                    <p id="phoneError" class="hidden text-red-500 text-xs font-bold mt-1 ml-1"><i class="fa-solid fa-circle-exclamation mr-1"></i> Please enter a valid 10-digit mobile number.</p>
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full bg-brand-green hover:bg-green-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all mt-4 transform hover:-translate-y-0.5">
+                    Book Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
